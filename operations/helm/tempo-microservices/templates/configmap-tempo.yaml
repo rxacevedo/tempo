@@ -10,10 +10,7 @@ data:
     compactor: null
     distributor:
         receivers:
-            jaeger:
-                protocols:
-                    thrift_http: null
-            opencensus: null
+{{- toYaml .Values.distributor.receivers | nindent 12 }}
     ingester:
         lifecycler:
             ring:

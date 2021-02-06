@@ -20,6 +20,12 @@ distributor:
     jaeger:
       protocols:
         thrift_http: null
+    opencensus: null
+    zipkin:
+    otlp:
+      protocols:
+        http:
+        grpc:
 compactor:
   serviceAccountName: tempo
   replicas: 1
