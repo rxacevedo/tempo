@@ -35,6 +35,11 @@ spec:
           name: tempo-conf
         - mountPath: /var/tempo
           name: ingester-data
+      {{- with .Values.ingester }}
+      {{- if .serviceAccountName }}
+      serviceAccountName: {{ .serviceAccountName }}
+      {{- end }}
+      {{- end }}
       volumes:
       - configMap:
           name: tempo
