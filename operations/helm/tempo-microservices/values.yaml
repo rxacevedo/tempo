@@ -1,3 +1,8 @@
+serviceAccount:
+  create: true
+  name: tempo
+  annotations:
+    eks.amazonaws.com/role-arn: arn:aws:iam::474589087003:role/TempoRole
 retention: 48h
 storage:
   capacity: 30G
@@ -11,6 +16,7 @@ backend:
     insecure: true
     secret_key: supersecret
 distributor:
+  serviceAccountName: tempo
   replicas: 2
   image: grafana/tempo:latest
   resources: 
@@ -22,6 +28,7 @@ distributor:
       protocols:
         thrift_http: null
 compactor:
+  serviceAccountName: tempo
   replicas: 1
   image: grafana/tempo:latest
   resources: 
@@ -29,6 +36,7 @@ compactor:
       cpu:      250m
       memory:   1Gi
 ingester:
+  serviceAccountName: tempo
   replicas: 3
   image: grafana/tempo:latest
   resources: 
@@ -42,6 +50,7 @@ resources:
       cpu:      500m
       memory:   2Gi
 queryFrontend:
+  serviceAccountName: tempo
   replicas: 1
   image: grafana/tempo:latest
   resources:
@@ -49,6 +58,7 @@ queryFrontend:
       cpu:      250m
       memory:   500Mi
 querier:
+  serviceAccountName: tempo
   replicas: 1
   image: grafana/tempo:latest
   resources: 

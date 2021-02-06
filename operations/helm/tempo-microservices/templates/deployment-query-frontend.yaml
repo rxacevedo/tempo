@@ -55,6 +55,11 @@ spec:
         volumeMounts:
         - mountPath: /conf
           name: tempo-query-conf
+      {{- with .Values.queryFrontend }}
+      {{- if .serviceAccountName }}
+      serviceAccountName: {{ .serviceAccountName }}
+      {{- end }}
+      {{- end }}
       volumes:
       - configMap:
           name: tempo-query

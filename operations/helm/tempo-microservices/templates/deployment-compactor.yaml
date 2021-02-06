@@ -36,6 +36,11 @@ spec:
         volumeMounts:
         - mountPath: /conf
           name: tempo-conf
+      {{- with .Values.compactor }}
+      {{- if .serviceAccountName }}
+      serviceAccountName: {{ .serviceAccountName }}
+      {{- end }}
+      {{- end }}
       volumes:
       - configMap:
           name: tempo-compactor
