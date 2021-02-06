@@ -7,14 +7,7 @@ retention: 48h
 storage:
   capacity: 30G
   storageClassName: local-path
-backend:
-  backend: s3
-  s3:
-    access_key: tempo
-    bucket: tempo
-    endpoint: minio:9000
-    insecure: true
-    secret_key: supersecret
+backend: {}
 distributor:
   serviceAccountName: tempo
   replicas: 2
