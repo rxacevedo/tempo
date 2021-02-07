@@ -4,7 +4,9 @@ metadata:
   name: tempo
 data:
   overrides.yaml: |
-    overrides: {}
+    overrides:
+      limits:
+        max_traces_per_user: 50000
   tempo.yaml: |
     auth_enabled: false
     compactor: null
