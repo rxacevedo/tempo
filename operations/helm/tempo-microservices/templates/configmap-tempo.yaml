@@ -8,6 +8,8 @@ data:
   tempo.yaml: |
     auth_enabled: false
     compactor: null
+    query_frontend:
+        query_shards: 10
     distributor:
         receivers:
 {{- toYaml .Values.distributor.receivers | nindent 12 }}

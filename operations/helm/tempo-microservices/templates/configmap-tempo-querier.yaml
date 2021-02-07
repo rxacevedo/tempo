@@ -12,8 +12,8 @@ data:
             #     max_recv_msg_size: 104857600
             #     max_send_msg_size: 16777216
             #    # max_send_msg_size: 33554432
-            max_concurrent_queries: 10
-            query_timeout: 20
+        # max_concurrent_queries: 10
+        # query_timeout: 20
     memberlist:
         abort_if_cluster_join_fails: false
         bind_port: 7946
