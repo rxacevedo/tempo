@@ -47,5 +47,10 @@ spec:
         ports:
         - containerPort: 9150
           name: http-metrics
+      {{- with .Values.memcached }}
+      {{- if .serviceAccountName }}
+      serviceAccountName: {{ .serviceAccountName }}
+      {{- end }}
+      {{- end }}
   updateStrategy:
     type: RollingUpdate

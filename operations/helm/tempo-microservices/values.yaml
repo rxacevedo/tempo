@@ -65,12 +65,14 @@ querier:
       cpu:      250m
       memory:   500Mi
 tempoQuery:
+  serviceAccountName: tempo
   image: grafana/tempo-query:latest
   resources: 
     requests:
       cpu:      50m
       memory:   100Mi
 memcached:
+  serviceAccountName: tempo
   image: memcached:1.5.17-alpine
   replicas: 0
 
