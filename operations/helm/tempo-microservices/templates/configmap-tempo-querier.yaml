@@ -8,9 +8,9 @@ data:
     querier:
         frontend_worker:
             frontend_address: query-frontend-discovery.tracing.svc.cluster.local:9095
-            # grpc_client_config:
-            #     max_recv_msg_size: 104857600
-            #     max_send_msg_size: 16777216
+            grpc_client_config:
+                max_recv_msg_size: 104857600
+                max_send_msg_size: 16777216
             #    # max_send_msg_size: 33554432
         # max_concurrent_queries: 10
         # query_timeout: 20
