@@ -56,5 +56,6 @@ spec:
       - ReadWriteOnce
       resources:
         requests:
-          storage: 5Gi
-      storageClassName: local-path
+          storage: {{ .Values.storage.capacity }}
+      storageClassName: {{ .Values.storage.storageClassName }}
+
