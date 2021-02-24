@@ -6,7 +6,7 @@ data:
   overrides.yaml: |
     overrides:
       limits:
-        max_traces_per_user: 50000
+        max_traces_per_user: 60000
         ingestion_rate_limit: 100000
         ingestion_burst_size: 155000
   tempo.yaml: |
